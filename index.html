@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Партфолио</title>
+  <link rel="stylesheet" href="./pages/index.css" >
+</head>
+<body class="root">
+  <h1 class="root__title">Партфолио</h1>
+  
+
+  <div id="myModal" class="modal">
+  
+   
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <image class="zoom-image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"> </image>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  
+  </div>
+
+  <section class="menu">
+    <div class="menu__container">
+      <button 
+        id="menu__button_addimage" 
+        class="menu__button" 
+        type="button"
+        onclick="window['dialog-id-image'].showModal()" 
+        aria-controls="dialog-id-image"
+        >Контактная информация
+      </button>
+      <button 
+        id="menu__button_changeProfile" 
+        class="menu__button" 
+        type="button"
+        onclick="window['dialog-id-profile'].showModal()"
+        aria-controls="dialog-id-profile"
+        >Записаться на фотоссесию</button>
+    </div>
+  </section>-
+
+
+
+  <dialog id="dialog-id-profile">
+    <form class="popup-profile">
+      <div class="popup-profile-area">
+        <h2 class="profile__title">Запись</h2>
+        
+        <input
+          class="profile__input"
+          placeholder="Имя"
+          type="text"
+          id="profile__input_name"
+          name="profileName"
+        >
+        <input
+          class="profile__input"
+          placeholder="Номер телефона"
+          type="text"
+          id="profile__input_about"
+          name="profileAbout"
+        >
+        <button class="profile__button"
+        id="profile-button" 
+        type="button"
+        onclick="window['dialog-id-image'].close()"
+        >Отправить
+        </button>
+        <button class="popup__close-button">
+          <span class="visually-hidden">X</span>
+        </button>
+      </div>  
+    </form>
+  </dialog>
+
+
+    <dialog id="dialog-id-image">  
+      <form class="popup-image">
+        <h2 class="popup__title">Контактная информация</h2>    
+          <div>
+            <p>Григорьева Ирина Олеговна</p>
+            <p>+79607193726</p>
+          </div>     
+          <div>
+            <p>Белов Игорь Сергеевич</p>
+            <p>+79607193726</p>
+          </div>
+      </form>
+      <form method="dialog">
+        <button class="popup__close-button">
+              <span class="visually-hidden">X</span>
+          </button>
+      </form> 
+    </dialog>
+
+
+
+
+
+ 
+  <h2 class="root__title">Примеры работ</h2>
+
+  <section class="cards">
+    
+  </section>
+  <!--card-->
+  <template id="card">
+    <figure class="card" id="#">
+      <button type="submit" class="button card__remove"></button>
+      <img class="card__image" src="#" alt="#" id="#card__image" />
+      <figcaption class="card__caption">
+        <h2 class="card__title"></h2>
+        <div class="card__like-block">
+          <button type="button" class="card__like"></button>
+          <p class="card__like-counter"></p>
+        </div>
+      </figcaption>
+    </figure>
+  </template>
+  <script type="module" src="./pages/index.js" ></script>
+  <script type="module" src="./blocks/menu/menu.js" ></script>
+</body>
+</html>

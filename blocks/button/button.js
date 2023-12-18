@@ -1,0 +1,1 @@
+var btn = document.getElementById("menu__button_addimage");
